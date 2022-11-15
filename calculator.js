@@ -25,9 +25,12 @@ try {
   var pi = Math.PI;
   var e = Math.E;
   var abs = Math.abs;
-  var random = Math.random;
+  var rand = Math.random;
   function log(number, base) {
     return Math.log(number) / Math.log(base);
+  }
+  function randrange(min, max) {
+    return (Math.random() * (max - min)) + min;
   }
   // Functionality
   calculatorInput.onchange = function() {
