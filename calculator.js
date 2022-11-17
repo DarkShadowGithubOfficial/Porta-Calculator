@@ -1,13 +1,9 @@
 try {
   // Declaration
-  let calculator = document.createElement('div');
   let calculatorInput = document.createElement('input');
-  let calculatorOutput = document.createElement('div');
 
   // Styling
-  calculatorInput.style = 'position: absolute; top: 60px; left: 0; width: 200px; height: 100px; border: 1px solid black;';
-  calculatorOutput.style = 'position: absolute: top: 0; left: 0; width: 200px; height: 20px; border: 1px solid black;';
-  calculator.style = 'border: 1px solid black; width: fit-content: height: fit-content;';
+  calculatorInput.style = 'position: fixed; top: 60px; left: 0; width: 200px; height: 100px; border: 1px solid black;';
 
   function arcsin(sine) {
     return Math.asin(sine) * 57.2958 + " degrees";
@@ -34,13 +30,11 @@ try {
   }
   // Functionality
   calculatorInput.onchange = function() {
-    calculatorOutput.innerHTML = new Function(`return ${calculatorInput.value}`)();
+    new Function(`try{alert(${calculatorInput.value})} catch(err) {alert(err)}`)();
   }
 
   // Appending
-  document.body.appendChild(calculator);
   document.body.appendChild(calculatorInput);
-  document.body.appendChild(calculatorOutput);
 }
 catch (err) {
   alert(err);
